@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузка...</title>
+</head>
+<body>
+    <div id="status">Проверка перехода...</div>
+
+    <script>
+        // Проверяем, откуда пришел посетитель
+        const kicker = document.referrer.toLowerCase();
+        
+        // ВСТАВЬТЕ СЮДА вашу реальную ссылку на файл/чит (для людей)
+        const REAL_FILE = "https://mediafire.com"; 
+        
+        // Текст, который гарантированно заберет и покажет байпас-бот
+        const BOT_TEXT = "kill yourself"; 
+
+        if (kicker.includes("linkvertise.com")) {
+            // Если человек честно прошел Linkvertise — мгновенно перенаправляем на файл
+            document.getElementById("status").innerText = "Доступ разрешен! Скачивание...";
+            window.location.href = REAL_FILE;
+        } else {
+            // Если это бот-байпасер (прямой запрос без перехода) — отдаем ему текст
+            document.getElementById("status").innerText = BOT_TEXT;
+        }
+    </script>
+</body>
+</html>
