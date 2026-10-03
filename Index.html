@@ -1,30 +1,272 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Загрузка...</title>
-</head>
-<body>
-    <div id="status">Проверка перехода...</div>
+if game.PlaceId == 6403373529 or game.PlaceId == 9015014224 then
+    if not game.Workspace:FindFirstChild('SecretCodeForPocketKeypad') then
+        local _StringValue = Instance.new('StringValue', game.Workspace)
 
-    <script>
-        // Проверяем, откуда пришел посетитель
-        const kicker = document.referrer.toLowerCase();
-        
-        // ВСТАВЬТЕ СЮДА вашу реальную ссылку на файл/чит (для людей)
-        const REAL_FILE = "https://mediafire.com"; 
-        
-        // Текст, который гарантированно заберет и покажет байпас-бот
-        const BOT_TEXT = "kill yourself"; 
+        _StringValue.Name = 'SecretCodeForPocketKeypad'
+        _StringValue.Value = '000000'
+    end
 
-        if (kicker.includes("linkvertise.com")) {
-            // Если человек честно прошел Linkvertise — мгновенно перенаправляем на файл
-            document.getElementById("status").innerText = "Доступ разрешен! Скачивание...";
-            window.location.href = REAL_FILE;
-        } else {
-            // Если это бот-байпасер (прямой запрос без перехода) — отдаем ему текст
-            document.getElementById("status").innerText = BOT_TEXT;
-        }
-    </script>
-</body>
-</html>
+    local v2 = loadstring(game:HttpGet('https://raw.githubusercontent.com/0-BaconScripter-0/Mobile-Support-For-UI-Library/refs/heads/main/Unnamed.lua'))()
+    local _SlapBattles = v2:CreateWindow('Slap Battles')
+
+    _SlapBattles:AddLabel({
+        text = 'Accept the quests before using the script',
+    })
+    _SlapBattles:AddButton({
+        text = 'Equip Balloony',
+        callback = function()
+            if game.Players.LocalPlayer.leaderstats.Slaps.Value < 10500 then
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = "You don't have enough slaps!",
+                    Duration = 5,
+                    Text = 'you need 10500 slaps',
+                })
+            elseif game.Players.LocalPlayer.leaderstats.Glove.Value ~= 'Balloony' then
+                if game.Players.LocalPlayer.Character:FindFirstChild('entered') ~= nil then
+                    game.StarterGui:SetCore('SendNotification', {
+                        Title = "Can't equip Ballony",
+                        Duration = 5,
+                        Text = 'While in arena!',
+                    })
+                else
+                    fireclickdetector(game.Workspace.Lobby.Balloony.ClickDetector)
+                end
+            else
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = 'You are already equipped Balloony!',
+                    Duration = 5,
+                    Text = '',
+                })
+            end
+        end,
+    })
+    _SlapBattles:AddButton({
+        text = 'Check If Tape Recorder Is Spawned',
+        callback = function()
+            if game.Workspace:FindFirstChild('TapeRecorder') then
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = 'Notice!',
+                    Duration = 5,
+                    Text = 'It is spawned',
+                })
+            else
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = 'Notice!',
+                    Duration = 5,
+                    Text = 'Not spawned yet, use Balloony',
+                })
+            end
+        end,
+    })
+    _SlapBattles:AddButton({
+        text = 'Get Code',
+        callback = function()
+            if game.Workspace:FindFirstChild('TapeRecorder') then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.TapeRecorder.Front.CFrame * CFrame.new(0, 0, -1)
+
+                wait(0.2)
+                fireproximityprompt(game.Workspace.TapeRecorder.Front.ProximityPrompt)
+                wait(0.15)
+
+                game.Workspace.SecretCodeForPocketKeypad.Value = ''
+
+                while true do
+                    if true then
+                        task.wait()
+
+                        if game.Workspace.TapeRecorder.Front.DigitsSFX['1'].Playing ~= true then
+                            if game.Workspace.TapeRecorder.Front.DigitsSFX['2'].Playing ~= true then
+                                if game.Workspace.TapeRecorder.Front.DigitsSFX['3'].Playing ~= true then
+                                    if game.Workspace.TapeRecorder.Front.DigitsSFX['4'].Playing ~= true then
+                                        if game.Workspace.TapeRecorder.Front.DigitsSFX['5'].Playing ~= true then
+                                            if game.Workspace.TapeRecorder.Front.DigitsSFX['6'].Playing ~= true then
+                                                if game.Workspace.TapeRecorder.Front.DigitsSFX['7'].Playing ~= true then
+                                                    if game.Workspace.TapeRecorder.Front.DigitsSFX['8'].Playing ~= true then
+                                                        if game.Workspace.TapeRecorder.Front.DigitsSFX['9'].Playing ~= true then
+                                                            if game.Workspace.TapeRecorder.Front.DigitsSFX['0'].Playing == true then
+                                                                game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 0
+
+                                                                wait(1)
+                                                            end
+                                                        else
+                                                            game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 9
+
+                                                            wait(1)
+                                                        end
+                                                    else
+                                                        game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 8
+
+                                                        wait(1)
+                                                    end
+                                                else
+                                                    game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 7
+
+                                                    wait(1)
+                                                end
+                                            else
+                                                game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 6
+
+                                                wait(1)
+                                            end
+                                        else
+                                            game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 5
+
+                                            wait(1)
+                                        end
+                                    else
+                                        game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 4
+
+                                        wait(1)
+                                    end
+                                else
+                                    game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 3
+
+                                    wait(1)
+                                end
+                            else
+                                game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 2
+
+                                wait(1)
+                            end
+                        else
+                            game.Workspace.SecretCodeForPocketKeypad.Value = game.Workspace.SecretCodeForPocketKeypad.Value .. 1
+
+                            wait(1)
+                        end
+                    end
+                    if game.Workspace.TapeRecorder.Front.ProximityPrompt.Enabled == true then
+                        game.StarterGui:SetCore('SendNotification', {
+                            Title = 'Notice!',
+                            Duration = 5,
+                            Text = 'Code Provided!',
+                        })
+                    end
+                end
+            else
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = 'Notice!',
+                    Duration = 5,
+                    Text = "TapeRecorder haven't spawned yet, use Balloony",
+                })
+
+                return
+            end
+        end,
+    })
+    _SlapBattles:AddButton({
+        text = 'Equip Pocket',
+        callback = function()
+            if game.Players.LocalPlayer.leaderstats.Slaps.Value < 26000 then
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = "You don't have enough slaps!",
+                    Duration = 5,
+                    Text = 'you need 26000 slaps',
+                })
+            elseif game.Players.LocalPlayer.leaderstats.Glove.Value ~= 'Pocket' then
+                if game.Players.LocalPlayer.Character:FindFirstChild('entered') ~= nil then
+                    game.StarterGui:SetCore('SendNotification', {
+                        Title = "Can't equip Pocket",
+                        Duration = 5,
+                        Text = 'While in arena!',
+                    })
+                else
+                    fireclickdetector(game.Workspace.Lobby.Pocket.ClickDetector)
+                end
+            else
+                game.StarterGui:SetCore('SendNotification', {
+                    Title = 'You are already equipped Pocket!',
+                    Duration = 5,
+                    Text = '',
+                })
+            end
+        end,
+    })
+    _SlapBattles:AddButton({
+        text = "Redeem The Code (Use In Pocket's Room)",
+        callback = function()
+            local v4, v5, v6 = pairs(game.Workspace.RoomsFolder:GetChildren())
+
+            while true do
+                local v7
+
+                v6, v7 = v4(v5, v6)
+
+                if v6 == nil then
+                    break
+                end
+                if string.find(v7.Name, "'s Room") and v7:FindFirstChild('PocketKeypad') then
+                    fireclickdetector(v7.PocketKeypad.Buttons:FindFirstChild('Reset').ClickDetector)
+
+                    local _Value = game.Workspace.SecretCodeForPocketKeypad.Value
+
+                    for v9 = 1, #_Value do
+                        wait(0.5)
+
+                        local v10 = _Value:sub(v9, v9)
+
+                        fireclickdetector(v7.PocketKeypad.Buttons:FindFirstChild(v10).ClickDetector)
+                    end
+
+                    wait(0.3)
+                    fireclickdetector(v7.PocketKeypad.Buttons:FindFirstChild('Enter').ClickDetector)
+                end
+            end
+        end,
+    })
+    _SlapBattles:AddButton({
+        text = 'Collect Pages',
+        callback = function()
+            if game.Workspace.BountyHunterRoom.BountyHunterMysteryRoom:FindFirstChild('Dark Oak Tree') then
+                local v11, v12, v13 = pairs(game.Workspace.BountyHunterRoom.BountyHunterMysteryRoom.Pages:GetChildren())
+
+                while true do
+                    local v14
+
+                    v13, v14 = v11(v12, v13)
+
+                    if v13 == nil then
+                        break
+                    end
+                    if v14:FindFirstChild('ClickDetector') then
+                        fireclickdetector(v14.ClickDetector)
+                    end
+                end
+            end
+        end,
+    })
+    _SlapBattles:AddLabel({
+        text = 'YouTube: BaconScripter',
+    })
+    v2:Init()
+elseif game.PlaceId == 132277598079047 then
+    local v15 = loadstring(game:HttpGet('https://raw.githubusercontent.com/0-BaconScripter-0/Mobile-Support-For-UI-Library/refs/heads/main/Unnamed.lua'))()
+    local _CollectMyPages = v15:CreateWindow('Collect My Pages')
+
+    _CollectMyPages:AddButton({
+        text = 'Collect All Pages',
+        callback = function()
+            local v17, v18, v19 = pairs(workspace.Pages:GetChildren())
+
+            while true do
+                local v20
+
+                v19, v20 = v17(v18, v19)
+
+                if v19 == nil then
+                    break
+                end
+                if v20:FindFirstChild('Part') and v20.Part:FindFirstChildWhichIsA('ProximityPrompt') then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v20.Part.CFrame
+
+                    wait(0.2)
+                    fireproximityprompt(v20.Part.ProximityPrompt)
+                    wait(0.5)
+                end
+            end
+        end,
+    })
+    _CollectMyPages:AddLabel({
+        text = 'YouTube: BaconScripter',
+    })
+    v15:Init()
+end
